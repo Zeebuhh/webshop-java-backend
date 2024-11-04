@@ -2,12 +2,27 @@ package com.example.webshop.repository;
 
 import com.example.webshop.model.ProductCreateRequest;
 import com.example.webshop.model.ProductResponse;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+@Service
 public class ProductRepository {
+
+    //Singleton
+//    private static ProductRepository theRepository;
+//
+//    public static ProductRepository getProductRespoitory(){
+//        if (theRepository == null){
+//            theRepository = new ProductRepository();
+//        }
+//        return theRepository;
+//    }
+
 
     List<ProductResponse> products = new ArrayList<>();
 

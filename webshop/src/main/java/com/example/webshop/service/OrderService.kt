@@ -5,14 +5,18 @@ import com.example.webshop.repository.CustomerRepository
 import com.example.webshop.repository.OrderPositionRepository
 import com.example.webshop.repository.OrderRepository
 import com.example.webshop.repository.ProductRepository
+import org.springframework.stereotype.Service
 import java.util.*
 
-class OrderService {
+@Service
+class OrderService(
+    val productRepository: ProductRepository,
+    val orderRepository: OrderRepository,
+    val customerRepository: CustomerRepository,
+    val orderPositionRepository: OrderPositionRepository
+) {
 
-    val orderRepository = OrderRepository()
-    val customerRepository = CustomerRepository()
-    val orderPositionRepository = OrderPositionRepository()
-    val productRepository = ProductRepository()
+
 
     fun createOrder(request: OrderCreateRequest): OrderResponse {
 
